@@ -1,0 +1,227 @@
+/* Resetting basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base font size */
+html {
+  font-size: 10px;
+}
+
+/* Body styling */
+body {
+  font-family: "Fredoka", sans-serif;
+  background-color: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+/* Login container */
+.login-container {
+  background-color: #fff;
+  border-radius: 2rem; /* Increased border-radius for a rounder look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 80rem;
+  display: flex;
+  overflow: hidden;
+  height: 60rem;
+}
+
+/* Left and right sections */
+.login-left,
+.login-right {
+  width: 50%;
+}
+
+/* Header styling */
+.login-header {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin: 8rem 0 3rem;
+}
+
+/* Login form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Input fields */
+.login-input {
+  padding: 1.2rem;
+  margin-bottom: 1.8rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem; /* More rounded input fields */
+  font-size: 1.6rem;
+  background-color: #fdfdfd;
+  color: #333;
+  width: 100%;
+  max-width: 35rem;
+}
+
+/* Focus state for inputs */
+.login-input:focus {
+  outline: none;
+  border: 1px solid #ff006e;
+}
+
+/* Sign in button */
+.login-btn {
+  background-color: #ff006e;
+  color: #fff;
+  padding: 1.4rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem; /* More rounded sign-in button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 35rem;
+}
+
+/* Wrapper for the remember me and forgot password section */
+.login-remember {
+  text-align: end;
+  width: 100%;
+  max-width: 35rem; /* Align with input fields width */
+  margin-bottom: 1.5rem;
+}
+
+
+/* Styling for the forgot password link */
+.login-remember a {
+  font-size: 1.4rem;
+  color: #ff006e;
+  text-decoration: none;
+}
+
+.login-remember a:hover {
+  text-decoration: underline;
+  color: #00B9F5;
+}
+
+/* Hover state for sign-in button */
+.login-btn:hover {
+  background-color:#00B9F5;
+}
+
+/* Remember me and Forgot password links */
+.login-form label {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.login-form a {
+  font-size: 1.4rem;
+  color: #ff006e;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* Divider styling */
+.login-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 35rem;
+  margin: 1.5rem 0;
+}
+
+.login-divider hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  flex-grow: 1;
+}
+
+.or-text {
+  margin: 0 1rem;
+  color: #999;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+/* Google and Apple buttons */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.google-btn,
+.apple-btn {
+  background-color: #fdfdfd;
+  color: #333;
+  padding: 1.4rem; /* Matching padding with the sign-in button */
+  font-size: 1.8rem;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 1rem; /* More rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center align icons */
+  width: 100%;
+  max-width: 35rem; /* Matching width with the sign-in button */
+  gap: 1rem;
+}
+
+.google-btn:hover,
+.apple-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.google-btn i,
+.apple-btn i {
+  font-size: 2rem; /* Adjusted icon size */
+}
+
+/* Footer text styling */
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.login-footer a {
+  color: #ff006e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Right section background color and image */
+.login-right {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image {
+  max-width: 100%;
+  border-radius: 5px;
+  
+}

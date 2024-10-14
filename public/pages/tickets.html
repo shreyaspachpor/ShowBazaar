@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Selection</title>
+    <link rel="stylesheet" href="/assets/css/tickets.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main">
+      <div class="main-logo">ShowBazaar</div>
+      <nav>
+        <ul class="main-nav-list">
+          <li class="main-nav-item city-selector">
+            <select id="city-dropdown">
+              <option value="">Select City</option>
+            </select>
+            <button class="location-btn" id="detect-location">
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+          </li>
+          <li class="main-nav-item">
+            <a href="#" class="main-nav-link"
+              ><i class="fa-solid fa-bell"></i
+            ></a>
+          </li>
+          <li class="main-nav-item">
+            <a href="login.html" class="main-nav-link"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="event-title">
+      <h1>Punchliners Comedy Show ft Vipul Goyal in Delhi</h1>
+      <p class="event-info">Sat, 09 Nov • 8:00 PM • Delhi</p>
+    </div>
+
+    <div class="ticket-container">
+      <h2>Choose tickets</h2>
+
+      <div class="ticket-type">
+        <div class="ticket-info">
+          <div class="ticket-name">Front 5 Rows</div>
+        </div>
+        <span class="ticket-price">₹1,199</span>
+        <button class="add-btn" onclick="showCounter(this)">ADD</button>
+        <div class="counter">
+          <button onclick="decrementCount(this)">-</button>
+          <span>1</span>
+          <button onclick="incrementCount(this)">+</button>
+        </div>
+      </div>
+
+      <div class="ticket-type">
+        <div class="ticket-info">
+          <div class="ticket-name">Early Bird VIP</div>
+        </div>
+        <span class="ticket-price">₹899</span>
+        <button class="add-btn" onclick="showCounter(this)">ADD</button>
+        <div class="counter">
+          <button onclick="decrementCount(this)">-</button>
+          <span>1</span>
+          <button onclick="incrementCount(this)">+</button>
+        </div>
+      </div>
+
+      <div class="ticket-type">
+        <div class="ticket-info">
+          <div class="ticket-name">Early Bird General</div>
+        </div>
+        <span class="ticket-price">₹699</span>
+        <button class="add-btn" onclick="showCounter(this)">ADD</button>
+        <div class="counter">
+          <button onclick="decrementCount(this)">-</button>
+          <span>1</span>
+          <button onclick="incrementCount(this)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-button">
+      <button class="final-btn">Proceed</button>
+    </div>
+
+
+
+
+    <script src="/assets/js/tickets.js"></script>
+  </body>
+</html>
