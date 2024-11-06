@@ -24,7 +24,7 @@ body {
 /* Login container */
 .login-container {
   background-color: #fff;
-  border-radius: 2rem; /* Increased border-radius for a rounder look */
+  border-radius: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 80rem;
@@ -57,12 +57,13 @@ body {
   width: 100%;
 }
 
-/* Input fields */
-.login-input {
+/* Input fields and user-type-selection styling */
+.login-input,
+.user-type-selection select {
   padding: 1.2rem;
   margin-bottom: 1.8rem;
   border: 1px solid #ccc;
-  border-radius: 1rem; /* More rounded input fields */
+  border-radius: 1rem;
   font-size: 1.6rem;
   background-color: #fdfdfd;
   color: #333;
@@ -71,7 +72,8 @@ body {
 }
 
 /* Focus state for inputs */
-.login-input:focus {
+.login-input:focus,
+.user-type-selection select:focus {
   outline: none;
   border: 1px solid #ff006e;
 }
@@ -84,7 +86,7 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   border: none;
-  border-radius: 1rem; /* More rounded sign-in button */
+  border-radius: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-align: center;
@@ -92,16 +94,19 @@ body {
   max-width: 35rem;
 }
 
-/* Wrapper for the remember me and forgot password section */
+/* Hover state for sign-in button */
+.login-btn:hover {
+  background-color: #00b9f5;
+}
+
+/* Remember me and Forgot password links */
 .login-remember {
   text-align: end;
   width: 100%;
-  max-width: 35rem; /* Align with input fields width */
+  max-width: 35rem;
   margin-bottom: 1.5rem;
 }
 
-
-/* Styling for the forgot password link */
 .login-remember a {
   font-size: 1.4rem;
   color: #ff006e;
@@ -110,28 +115,7 @@ body {
 
 .login-remember a:hover {
   text-decoration: underline;
-  color: #00B9F5;
-}
-
-/* Hover state for sign-in button */
-.login-btn:hover {
-  background-color:#00B9F5;
-}
-
-/* Remember me and Forgot password links */
-.login-form label {
-  font-size: 1.4rem;
-  color: #333;
-}
-
-.login-form a {
-  font-size: 1.4rem;
-  color: #ff006e;
-  text-decoration: none;
-}
-
-.login-form a:hover {
-  text-decoration: underline;
+  color: #00b9f5;
 }
 
 /* Divider styling */
@@ -157,47 +141,10 @@ body {
   line-height: 2.4rem;
 }
 
-/* Google and Apple buttons */
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.google-btn,
-.apple-btn {
-  background-color: #fdfdfd;
-  color: #333;
-  padding: 1.4rem; /* Matching padding with the sign-in button */
-  font-size: 1.8rem;
-  font-weight: 500;
-  border: 1px solid #ccc;
-  border-radius: 1rem; /* More rounded buttons */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center align icons */
-  width: 100%;
-  max-width: 35rem; /* Matching width with the sign-in button */
-  gap: 1rem;
-}
-
-.google-btn:hover,
-.apple-btn:hover {
-  background-color: #f0f0f0;
-}
-
-.google-btn i,
-.apple-btn i {
-  font-size: 2rem; /* Adjusted icon size */
-}
-
 /* Footer text styling */
 .login-footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 2rem; /* Pushes the footer up slightly */
   font-size: 1.4rem;
   color: #333;
 }
@@ -223,5 +170,4 @@ body {
 .login-image {
   max-width: 100%;
   border-radius: 5px;
-  
 }

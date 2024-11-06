@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Sign Up - ShowBazaar</title>
     <link rel="stylesheet" href="../../assets/css/login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,23 +19,33 @@
   <body>
     <div class="login-container">
       <div class="login-left">
-        <div class="login-header">Sign in to ShowBazaar</div>
+        <div class="login-header">Create your Account</div>
 
-        <form class="login-form" action="login-process.php" method="post">
-          <div class="user-type-selection" style="margin-bottom: 20px";>
-            <label style="display: block; margin-bottom: 10px">Login as:</label>
+        <form class="login-form" action="process_signup.php" method="POST">
+          <div class="user-type-selection" style="margin-bottom: 20px; margin-left:0px ;">
+            <label style="display: block; margin-bottom: 10px;">Register as:</label>
             <select name="user_type" class="login-input" required>
               <option value="user">User</option>
               <option value="admin">Admin</option>
             </select>
           </div>
+
+          <input
+            type="text"
+            name="name"
+            class="login-input"
+            placeholder="Full Name"
+            required
+          />
+          
           <input
             type="email"
-            class="login-input"
             name="email"
+            class="login-input"
             placeholder="Email"
             required
           />
+
           <input
             type="password"
             name="password"
@@ -44,30 +54,25 @@
             required
           />
 
-          <!-- Remember Me and Forgot Password Row -->
-          <div class="login-remember">
-            <a href="#">Forgot Password?</a>
-          </div>
+          <input
+            type="tel"
+            name="phone"
+            class="login-input"
+            placeholder="Phone Number"
+            required
+          />
 
-          <button type="submit" class="login-btn">Sign in</button>
-
-          <div class="login-divider">
-            <hr />
-            <span class="or-text">or</span>
-            <hr />
-          </div>
+          <button type="submit" class="login-btn">Sign Up</button>        
         </form>
 
-        <!-- Footer: Sign Up Section -->
         <div class="login-footer">
-          Don’t have an account? <a href="signup.html">Sign up now</a>
+          Already have an account? <a href="login.php">Sign in</a>
         </div>
       </div>
 
-      <!-- Right Image Section -->
       <div class="login-right">
         <img
-          src="../../assets/images/Login.jpg"
+          src="../../assets/images/Signup.jpg"
           alt="Login Image"
           class="login-image"
         />

@@ -1,0 +1,79 @@
+/* Category Banner Styles */
+.category-banner {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.category-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.category-banner p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Category Events Section */
+.category-events {
+    padding: 2rem 0;
+}
+
+.category-events .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* No Events Message */
+.no-events {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.no-events i {
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.no-events h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.no-events p {
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Event Grid Layout */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .category-banner {
+        padding: 2rem 1rem;
+    }
+
+    .category-banner h1 {
+        font-size: 2rem;
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
