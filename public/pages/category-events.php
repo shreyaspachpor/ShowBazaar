@@ -25,12 +25,14 @@ try {
             $category_name = $category['name'];
             $category_desc = $category['description'];
         } else {
-            // Category not found
+
             header("Location: index.php");
             exit();
         }
+
         $stmt->close();
-    } else {
+    } 
+    else {
         throw new Exception("Failed to prepare category query");
     }
 
@@ -81,7 +83,9 @@ if (!$category) {
 
 <body>
     <header class="main">
-        <div class="main-logo">ShowBazaar</div>
+        <div class="main-logo">
+            <a href="index.php" class="main-link" style="text-decoration: none; color: #ffff;">ShowBazaar</a>
+        </div>
         <nav>
             <ul class="main-nav-list">
                 <li class="main-nav-item city-selector">

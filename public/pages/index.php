@@ -10,7 +10,7 @@ function getCarouselItems($conn)
             FROM carousel_items ci 
             LEFT JOIN events e ON ci.id = e.category_id 
             ORDER BY ci.id ASC
-            LIMIT 3";
+            LIMIT 2";
   return $conn->query($sql);
 }
 
@@ -207,7 +207,7 @@ $events_result = getUpcomingEvents($conn);
               <span>₹<?php echo number_format($event['price_silver']); ?></span> -
               <span>₹<?php echo number_format($event['price_platinum']); ?></span>
             </div>
-            <a href="event-details.php?id=<?php echo $event['id']; ?>" class="book-now">Book Now</a>
+            <a href="category-events.php?id=<?php echo $event['id']; ?>" class="book-now">Book Now</a>
           </div>
         </div>
 
@@ -220,23 +220,19 @@ $events_result = getUpcomingEvents($conn);
       const citySelector = document.querySelector('.city-selector');
       const locationDropdown = document.querySelector('.location-dropdown');
 
-      // Toggle dropdown
       locationDropdown.addEventListener('click', function(e) {
         e.stopPropagation();
         citySelector.classList.toggle('active');
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', function() {
         citySelector.classList.remove('active');
       });
 
-      // Prevent dropdown from closing when clicking inside it
       document.querySelector('.city-dropdown-content').addEventListener('click', function(e) {
         e.stopPropagation();
       });
 
-      // Update selected city
       document.querySelectorAll('.city-dropdown-content a').forEach(item => {
         item.addEventListener('click', function(e) {
           e.preventDefault();
@@ -246,7 +242,6 @@ $events_result = getUpcomingEvents($conn);
         });
       });
     });
-    // Search functionality
     document.getElementById('search-input').addEventListener('keyup', function(e) {
       if (e.key === 'Enter') {
         const searchQuery = this.value.trim();
@@ -257,40 +252,35 @@ $events_result = getUpcomingEvents($conn);
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-      // Handle notification dropdown
       const notificationBtn = document.querySelector('.notification-icon .nav-icon-btn');
       const notificationDropdown = document.querySelector('.notification-dropdown');
 
       notificationBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         notificationDropdown.classList.toggle('active');
-        userDropdown.classList.remove('active'); // Close user dropdown
+        userDropdown.classList.remove('active');
       });
 
-      // Handle user dropdown
       const userBtn = document.querySelector('.user-icon .nav-icon-btn');
       const userDropdown = document.querySelector('.user-dropdown');
 
       userBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         userDropdown.classList.toggle('active');
-        notificationDropdown.classList.remove('active'); // Close notification dropdown
+        notificationDropdown.classList.remove('active'); 
       });
 
-      // Close dropdowns when clicking outside
       document.addEventListener('click', function() {
         notificationDropdown.classList.remove('active');
         userDropdown.classList.remove('active');
       });
 
-      // Prevent dropdowns from closing when clicking inside them
       [notificationDropdown, userDropdown].forEach(dropdown => {
         dropdown.addEventListener('click', function(e) {
           e.stopPropagation();
         });
       });
 
-      // Handle mark all as read
       document.querySelector('.mark-all-read').addEventListener('click', function() {
         document.querySelectorAll('.notification-item.unread')
           .forEach(item => item.classList.remove('unread'));

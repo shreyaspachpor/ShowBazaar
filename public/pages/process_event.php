@@ -1,5 +1,4 @@
 <?php
-// process-event.php
 session_start();
 require_once '../../config/database.php';
 
@@ -13,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user_id']) && $_SES
             $target_path = $upload_dir . $file_name;
             
             if (move_uploaded_file($_FILES['image_url']['tmp_name'], $target_path)) {
-                $image_url = 'uploads/events/' . $file_name;
+                $image_url = 'images/events' . $file_name;
             }
         }
 
@@ -45,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user_id']) && $_SES
         if ($stmt->execute()) {
             echo "<script>
                     alert('Event created successfully!');
-                    window.location.href='events-list.php';
+                    window.location.href='category-events.php';
                   </script>";
         } else {
             throw new Exception("Failed to create event");

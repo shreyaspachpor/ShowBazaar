@@ -370,7 +370,6 @@ $base_assets_path = "../../assets";
             border: 2px solid #00b9f5;
         }
 
-        /* Search Bar Styles */
         .search-bar {
             margin: 2rem auto;
             max-width: 800px;
@@ -425,7 +424,6 @@ $base_assets_path = "../../assets";
             font-size: 1.2rem;
         }
 
-        /* Category Navigation */
         .category-nav {
             display: flex;
             justify-content: center;
@@ -564,23 +562,19 @@ $base_assets_path = "../../assets";
             const citySelector = document.querySelector('.city-selector');
             const locationDropdown = document.querySelector('.location-dropdown');
 
-            // Toggle dropdown
             locationDropdown.addEventListener('click', function(e) {
                 e.stopPropagation();
                 citySelector.classList.toggle('active');
             });
 
-            // Close dropdown when clicking outside
             document.addEventListener('click', function() {
                 citySelector.classList.remove('active');
             });
 
-            // Prevent dropdown from closing when clicking inside it
             document.querySelector('.city-dropdown-content').addEventListener('click', function(e) {
                 e.stopPropagation();
             });
 
-            // Update selected city
             document.querySelectorAll('.city-dropdown-content a').forEach(item => {
                 item.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -590,7 +584,6 @@ $base_assets_path = "../../assets";
                 });
             });
         });
-        // Search functionality
         document.getElementById('search-input').addEventListener('keyup', function(e) {
             if (e.key === 'Enter') {
                 const searchQuery = this.value.trim();
