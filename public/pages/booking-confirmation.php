@@ -10,18 +10,15 @@ session_start();
 
 $user_email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
 
-// Redirect to login if email is not set
 if (!$user_email) {
     header("Location: login.html");
     exit();
 }
 
-// Get parameters from URL
 $event_id = isset($_GET['event_id']) ? (int)$_GET['event_id'] : 0;
 $seats = isset($_GET['seats']) ? json_decode($_GET['seats'], true) : [];
 $amount = isset($_GET['amount']) ? (float)$_GET['amount'] : 0;
 
-// Fetch event details
 $event_sql = "SELECT e.*, c.name as category_name 
               FROM events e 
               LEFT JOIN categories c ON e.category_id = c.id 
@@ -41,26 +38,23 @@ try {
     exit();
 }
 
-// Function to send confirmation email
 function sendConfirmationEmail($to_email, $booking_details, $event_details)
 {
     $mail = new PHPMailer(true);
 
     try {
-        // Server settings
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'shreyaspachporr@gmail.com';
-        $mail->Password = 'wchnkrgxaduupysv'; // Be cautious about hardcoding sensitive information
+        $mail->Password = 'wchnkrgxaduupysv'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Recipients
         $mail->setFrom('shreyaspachporr@gmail.com', 'ShowBazaar');
         $mail->addAddress($to_email);
 
-        // Content
+        
         $mail->isHTML(true);
         $mail->Subject = 'Booking Confirmation - ' . $event_details['title'];
 
@@ -97,7 +91,6 @@ function sendConfirmationEmail($to_email, $booking_details, $event_details)
     }
 }
 
-// Send confirmation email if user email is set
 if ($user_email) {
     sendConfirmationEmail($user_email, ['seats' => $seats, 'amount' => $amount], $event);
 }

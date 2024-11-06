@@ -4,47 +4,229 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../../assets/css/login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Fredoka", sans-serif;
+        background-color: #fdfdfd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      .login-container {
+        background-color: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 60rem; /* Reduced from 80rem */
+        display: flex;
+        overflow: hidden;
+        height: 45rem; /* Reduced from 60rem */
+      }
+
+      .login-left, .login-right {
+        width: 50%;
+      }
+
+      .login-header {
+        font-size: 2.4rem; /* Reduced from 2.8rem */
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+        margin: 4rem 0 2rem; /* Reduced from 8rem 0 3rem */
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem; /* Reduced from 2rem */
+        width: 100%;
+      }
+
+      .select-container {
+        position: relative;
+        width: 100%;
+        max-width: 28rem; /* Reduced from 35rem */
+        margin-bottom: 1.5rem; /* Reduced from 1.8rem */
+      }
+
+      .select-label {
+        display: block;
+        margin-bottom: 0.6rem; /* Reduced from 0.8rem */
+        font-size: 1.3rem; /* Reduced from 1.4rem */
+        color: #666;
+      }
+
+      .custom-select {
+        position: relative;
+        width: 100%;
+      }
+
+      .custom-select select {
+        appearance: none;
+        width: 100%;
+        padding: 1rem; /* Reduced from 1.2rem */
+        font-size: 1.4rem; /* Reduced from 1.6rem */
+        border: 1px solid #ccc;
+        border-radius: 0.8rem; /* Reduced from 1rem */
+        background-color: #fdfdfd;
+        cursor: pointer;
+        color: #333;
+        font-family: "Fredoka", sans-serif;
+      }
+
+      .custom-select::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        pointer-events: none;
+      }
+
+      .custom-select select:focus {
+        outline: none;
+        border-color: #ff006e;
+      }
+
+      .login-input {
+        padding: 1rem; /* Reduced from 1.2rem */
+        margin-bottom: 1.5rem; /* Reduced from 1.8rem */
+        border: 1px solid #ccc;
+        border-radius: 0.8rem; /* Reduced from 1rem */
+        font-size: 1.4rem; /* Reduced from 1.6rem */
+        background-color: #fdfdfd;
+        color: #333;
+        width: 100%;
+        max-width: 28rem; /* Reduced from 35rem */
+      }
+
+      .login-input:focus {
+        outline: none;
+        border-color: #ff006e;
+      }
+
+      .login-btn {
+        background-color: #ff006e;
+        color: #fff;
+        padding: 1.2rem; /* Reduced from 1.4rem */
+        font-size: 1.6rem; /* Reduced from 1.8rem */
+        font-weight: 600;
+        border: none;
+        border-radius: 0.8rem; /* Reduced from 1rem */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        width: 100%;
+        max-width: 28rem; /* Reduced from 35rem */
+      }
+
+      .login-btn:hover {
+        background-color: #00b9f5;
+      }
+
+      .login-remember {
+        text-align: right;
+        width: 100%;
+        max-width: 28rem; /* Reduced from 35rem */
+        margin-bottom: 1.2rem; /* Reduced from 1.5rem */
+      }
+
+      .login-remember a {
+        font-size: 1.3rem; /* Reduced from 1.4rem */
+        color: #ff006e;
+        text-decoration: none;
+      }
+
+      .login-remember a:hover {
+        text-decoration: underline;
+        color: #00b9f5;
+      }
+
+      .login-divider {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 28rem; /* Reduced from 35rem */
+        margin: 1.2rem 0; /* Reduced from 1.5rem */
+      }
+
+      .login-divider hr {
+        flex-grow: 1;
+        border: none;
+        height: 1px;
+        background-color: #ccc;
+      }
+
+      .or-text {
+        margin: 0 1rem;
+        color: #999;
+        font-size: 1.3rem; /* Reduced from 1.4rem */
+      }
+
+      .login-footer {
+        text-align: center;
+        margin-top: 1.5rem; /* Reduced from 2rem */
+        font-size: 1.3rem; /* Reduced from 1.4rem */
+        color: #333;
+      }
+
+      .login-footer a {
+        color: #ff006e;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .login-right {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-image {
+        max-width: 100%;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
       <div class="login-left">
         <div class="login-header">Sign in to ShowBazaar</div>
-
+        
         <form class="login-form" action="login-process.php" method="post">
-          <div class="user-type-selection" style="margin-bottom: 20px";>
-            <label style="display: block; margin-bottom: 10px">Login as:</label>
-            <select name="user_type" class="login-input" required>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
+          <div class="select-container">
+            <label class="select-label">Login as:</label>
+            <div class="custom-select">
+              <select name="user_type" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
           </div>
-          <input
-            type="email"
-            class="login-input"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            class="login-input"
-            placeholder="Password"
-            required
-          />
 
-          <!-- Remember Me and Forgot Password Row -->
+          <input type="email" class="login-input" name="email" placeholder="Email" required />
+          <input type="password" name="password" class="login-input" placeholder="Password" required />
+
           <div class="login-remember">
             <a href="#">Forgot Password?</a>
           </div>
@@ -58,19 +240,13 @@
           </div>
         </form>
 
-        <!-- Footer: Sign Up Section -->
         <div class="login-footer">
-          Don’t have an account? <a href="signup.html">Sign up now</a>
+          Don't have an account? <a href="signup.html">Sign up now</a>
         </div>
       </div>
 
-      <!-- Right Image Section -->
       <div class="login-right">
-        <img
-          src="../../assets/images/Login.jpg"
-          alt="Login Image"
-          class="login-image"
-        />
+        <img src="../../assets/images/Login.jpg" alt="Login Image" class="login-image" />
       </div>
     </div>
   </body>

@@ -4,65 +4,221 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up - ShowBazaar</title>
-    <link rel="stylesheet" href="../../assets/css/login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..400&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Fredoka", sans-serif;
+        background-color: #fdfdfd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+      }
+
+      .login-container {
+        background-color: #fff;
+        border-radius: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 60rem;
+        display: flex;
+        overflow: hidden;
+        height: 45rem;
+      }
+
+      .login-left, .login-right {
+        width: 50%;
+      }
+
+      .login-header {
+        font-size: 2.4rem;
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+        margin: 3rem 0 2rem;
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        width: 100%;
+      }
+
+      .select-container {
+        position: relative;
+        width: 100%;
+        max-width: 28rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .select-label {
+        display: block;
+        margin-bottom: 0.6rem;
+        font-size: 1.3rem;
+        color: #666;
+      }
+
+      .custom-select {
+        position: relative;
+        width: 100%;
+      }
+
+      .custom-select select {
+        appearance: none;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.4rem;
+        border: 1px solid #ccc;
+        border-radius: 0.8rem;
+        background-color: #fdfdfd;
+        cursor: pointer;
+        color: #333;
+        font-family: "Fredoka", sans-serif;
+      }
+
+      .custom-select::after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        pointer-events: none;
+      }
+
+      .custom-select select:focus {
+        outline: none;
+        border-color: #ff006e;
+      }
+
+      .login-input {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        background-color: #fdfdfd;
+        color: #333;
+        width: 100%;
+        max-width: 28rem;
+      }
+
+      .login-input:focus {
+        outline: none;
+        border-color: #ff006e;
+      }
+
+      .login-btn {
+        background-color: #ff006e;
+        color: #fff;
+        padding: 1.2rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        width: 100%;
+        max-width: 28rem;
+        margin-top: 0.5rem;
+      }
+
+      .login-btn:hover {
+        background-color: #00b9f5;
+      }
+
+      .login-footer {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+        color: #333;
+      }
+
+      .login-footer a {
+        color: #ff006e;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      .login-right {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-image {
+        max-width: 100%;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="login-container">
       <div class="login-left">
         <div class="login-header">Create your Account</div>
-
+        
         <form class="login-form" action="process_signup.php" method="POST">
-          <div class="user-type-selection" style="margin-bottom: 20px; margin-left:0px ;">
-            <label style="display: block; margin-bottom: 10px;">Register as:</label>
-            <select name="user_type" class="login-input" required>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-            </select>
+          <div class="select-container">
+            <label class="select-label">Register as:</label>
+            <div class="custom-select">
+              <select name="user_type" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
           </div>
 
-          <input
-            type="text"
-            name="name"
-            class="login-input"
-            placeholder="Full Name"
-            required
+          <input 
+            type="text" 
+            name="name" 
+            class="login-input" 
+            placeholder="Full Name" 
+            required 
           />
           
-          <input
-            type="email"
-            name="email"
-            class="login-input"
-            placeholder="Email"
-            required
+          <input 
+            type="email" 
+            name="email" 
+            class="login-input" 
+            placeholder="Email" 
+            required 
           />
 
-          <input
-            type="password"
-            name="password"
-            class="login-input"
-            placeholder="Password"
-            required
+          <input 
+            type="password" 
+            name="password" 
+            class="login-input" 
+            placeholder="Password" 
+            required 
           />
 
-          <input
-            type="tel"
-            name="phone"
-            class="login-input"
-            placeholder="Phone Number"
-            required
+          <input 
+            type="tel" 
+            name="phone" 
+            class="login-input" 
+            placeholder="Phone Number" 
+            required 
           />
 
-          <button type="submit" class="login-btn">Sign Up</button>        
+          <button type="submit" class="login-btn">Sign Up</button>
         </form>
 
         <div class="login-footer">
@@ -71,11 +227,7 @@
       </div>
 
       <div class="login-right">
-        <img
-          src="../../assets/images/Signup.jpg"
-          alt="Login Image"
-          class="login-image"
-        />
+        <img src="../../assets/images/Signup.jpg" alt="Signup Image" class="login-image" />
       </div>
     </div>
   </body>

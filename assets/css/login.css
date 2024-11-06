@@ -1,16 +1,10 @@
-/* Resetting basic styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base font size */
-html {
-  font-size: 10px;
-}
-
-/* Body styling */
 body {
   font-family: "Fredoka", sans-serif;
   background-color: #fdfdfd;
@@ -21,7 +15,6 @@ body {
   color: #333;
 }
 
-/* Login container */
 .login-container {
   background-color: #fff;
   border-radius: 2rem;
@@ -33,13 +26,10 @@ body {
   height: 60rem;
 }
 
-/* Left and right sections */
-.login-left,
-.login-right {
+.login-left, .login-right {
   width: 50%;
 }
 
-/* Header styling */
 .login-header {
   font-size: 2.8rem;
   font-weight: 600;
@@ -48,7 +38,6 @@ body {
   margin: 8rem 0 3rem;
 }
 
-/* Login form styling */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -57,9 +46,60 @@ body {
   width: 100%;
 }
 
-/* Input fields and user-type-selection styling */
-.login-input,
-.user-type-selection select {
+/* Improved select container styling */
+.select-container {
+  position: relative;
+  width: 100%;
+  max-width: 35rem;
+  margin-bottom: 1.8rem;
+}
+
+.select-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Custom select styling */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select select {
+  appearance: none;
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  color: #333;
+  font-family: "Fredoka", sans-serif;
+}
+
+/* Custom arrow indicator */
+.custom-select::after {
+  content: '\f107';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
+
+.custom-select select:focus {
+  outline: none;
+  border-color: #ff006e;
+}
+
+/* Rest of the form styling */
+.login-input {
   padding: 1.2rem;
   margin-bottom: 1.8rem;
   border: 1px solid #ccc;
@@ -71,14 +111,11 @@ body {
   max-width: 35rem;
 }
 
-/* Focus state for inputs */
-.login-input:focus,
-.user-type-selection select:focus {
+.login-input:focus {
   outline: none;
-  border: 1px solid #ff006e;
+  border-color: #ff006e;
 }
 
-/* Sign in button */
 .login-btn {
   background-color: #ff006e;
   color: #fff;
@@ -94,14 +131,12 @@ body {
   max-width: 35rem;
 }
 
-/* Hover state for sign-in button */
 .login-btn:hover {
   background-color: #00b9f5;
 }
 
-/* Remember me and Forgot password links */
 .login-remember {
-  text-align: end;
+  text-align: right;
   width: 100%;
   max-width: 35rem;
   margin-bottom: 1.5rem;
@@ -118,7 +153,6 @@ body {
   color: #00b9f5;
 }
 
-/* Divider styling */
 .login-divider {
   display: flex;
   align-items: center;
@@ -128,23 +162,21 @@ body {
 }
 
 .login-divider hr {
-  border: 0;
+  flex-grow: 1;
+  border: none;
   height: 1px;
   background-color: #ccc;
-  flex-grow: 1;
 }
 
 .or-text {
   margin: 0 1rem;
   color: #999;
   font-size: 1.4rem;
-  line-height: 2.4rem;
 }
 
-/* Footer text styling */
 .login-footer {
   text-align: center;
-  margin-top: 2rem; /* Pushes the footer up slightly */
+  margin-top: 2rem;
   font-size: 1.4rem;
   color: #333;
 }
@@ -159,7 +191,6 @@ body {
   text-decoration: underline;
 }
 
-/* Right section background color and image */
 .login-right {
   background-color: #fff;
   display: flex;

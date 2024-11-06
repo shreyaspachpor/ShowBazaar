@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Debug log
         error_log("Login attempt - Email: $email, User Type: $user_type");
 
-        // Check in appropriate table based on user type
         if ($user_type === 'admin') {
             $sql = "SELECT * FROM admins WHERE email = ? AND password = ?";
         } else {
