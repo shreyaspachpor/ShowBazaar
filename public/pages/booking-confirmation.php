@@ -307,7 +307,6 @@ if ($user_email) {
         }
 
         function processPayment() {
-            // Simulate a successful payment
             document.getElementById('successModal').style.display = 'flex';
         }
     </script>

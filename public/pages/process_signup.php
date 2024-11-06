@@ -15,10 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $created_at = date('Y-m-d H:i:s');
 
     try {
-        // Start transaction
         $conn->begin_transaction();
 
-        // Check for existing email in both tables
         $check_admin = $conn->query("SELECT email FROM admins WHERE email = '$email'");
         $check_user = $conn->query("SELECT email FROM users WHERE email = '$email'");
 
@@ -31,10 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        // Debug: Print password info (remove in production)
         error_log("Password: " . $password);
 
-        // Insert based on user type
         if ($user_type === 'admin') {
             $sql = "INSERT INTO admins (username, password, email) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
@@ -49,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->close();
         }
 
-        // Commit transaction
         $conn->commit();
 
         echo "<script>
